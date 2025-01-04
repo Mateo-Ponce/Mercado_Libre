@@ -10,4 +10,10 @@ Finalmente, utilizamos Power BI para explorar los datos, construir visualizacion
 
 A modo de ejemplo vamos a trabajar con la categoria "componentes de pc", pero podria ser cualquier categoria de productos en mercado libre simplemente cambiado el link.
 
-<img src="images/URL.png" alt="URL" width="1020" height="206">
+<img src="Images/URL.png" alt="URL" width="1020" height="206">
+
+
+### **Codigo Python**
+
+se utilizan 3 funciones:
+- get_product_links
