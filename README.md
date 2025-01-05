@@ -14,15 +14,22 @@ A modo de ejemplo vamos a trabajar con la categoria "componentes de pc", pero po
 
 
 se utilizan 3 funciones:
-- *get_product_links*: su primer parametro es el link de la sección  a scrapear y el segundo la cantidad de paginas, asi se puede elegir que sección  recopilar datos y la cantidad de paginas. La funcion retorno una lista con los links de todos los productos producto en el rango.
-- *extract_product_data*: recibe un link de una publicacion de un producto como parametro, utilizando request y BeautifulSoup guarda el html del la pagina, crea un diccionario scrapeando por ejemplo el titulo, el precio, el tipo de producto, etc. Devuelve el diccionario con las claves y los valores.
-- *classify_product_type*: funcion complentaria que nos ayuda a llenar la columna "type" recorre los titulos de los producto buscando palabras claves como "procesador", "gabinete", "ram" si encuentra coincidencia el producto se guarda en esa categoria.
+- #### *get_product_links*: su primer parametro es el link de la sección  a scrapear y el segundo la cantidad de paginas, asi se puede elegir que sección  recopilar datos y la cantidad de paginas. La funcion retorno una lista con los links de todos los productos producto en el rango.
 
+  <img src="Images/get_product_link.png" alt="URL" width="757" height="411">
+
+  
+- #### *extract_product_data*: recibe un link de una publicacion de un producto como parametro, utilizando request y BeautifulSoup guarda el html del la pagina, crea un diccionario scrapeando por ejemplo el titulo, el precio, el tipo de producto, etc. Devuelve el diccionario con las claves y los valores.
+- #### *classify_product_type*: funcion complentaria que nos ayuda a llenar la columna "type" recorre los titulos de los producto buscando palabras claves como "procesador", "gabinete", "ram" si encuentra coincidencia el producto se guarda en esa categoria.
+
+<img src="Images/extract_product_data.png" alt="URL" width="794" height="623">
 
 ### **MAIN**
 
 inicializa una lista vacía llamada all_products, esta lista almacena cada diccionario de cada producto, al finalizar el bucle se convierte el diccionario en un DataFrame de pandas, para luego guardarlo como csv.
 en este ejemplo de Scrapearon 8 paginas y se creo un dataSet con 477 filas que representan cada producto, de esta manera de registra de forma estructurada la informacion de cada producto de forma automatica y queda
 lista para utilizarse en distintas herramientas, como excel, sql, power Bi, etc.
+
+<img src="Images/main.png" alt="URL" width="748" height="441">
 
 
