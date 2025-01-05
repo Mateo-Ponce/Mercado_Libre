@@ -38,3 +38,5 @@ lista para utilizarse en distintas herramientas, como excel, sql, power Bi, etc.
 
 
 # **dataset**
+
+<img src="Images/dataSet.png" alt="URL" width="1089" height="413">
