@@ -1,5 +1,21 @@
 # **Mercado libre ETL web Scraping y Analisis**
 
+<h1>Indice</h1>
+<div class="alert alert-block alert-info" style="margin-top: 20px">
+    <ul>
+        <li>
+            <a href="#Codigo-Python">Código Python</a>
+            <ul>
+                <li><a href="#Funciones">Funciones</a></li>
+                <li><a href="#Main">Main</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#Dataset">Dataset</a>
+        </li>
+    </ul>
+</div>
+
 # **Introducción**
 Este proyecto tiene como objetivo automatizar la extracción, transformación y carga (ETL) de datos desde Mercado Libre mediante web scraping. Utilizamos Python como herramienta principal, junto con las librerías BeautifulSoup, requests y pandas, para recopilar, limpiar, transformar y almacenar datos de manera estructurada.
 
@@ -13,7 +29,7 @@ A modo de ejemplo vamos a trabajar con la categoria "componentes de pc", pero po
 <img src="Images/URL.png" alt="URL" width="1020" height="206">
 
 
-## se utilizan 3 funciones:
+## Funciones:
 - #### *get_product_links*: su primer parametro es el link de la sección  a scrapear y el segundo la cantidad de paginas, asi se puede elegir que sección  recopilar datos y la cantidad de paginas. La funcion retorno una lista con los links de todos los productos producto en el rango.
 
   <img src="Images/get_product_link.png" alt="URL" width="757" height="411">
