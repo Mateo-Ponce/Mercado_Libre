@@ -19,8 +19,7 @@
 # **Introducción**
 Este proyecto tiene como objetivo automatizar la extracción, transformación y carga (ETL) de datos desde Mercado Libre mediante web scraping. Utilizamos Python como herramienta principal, junto con las librerías BeautifulSoup, requests y pandas, para recopilar, limpiar, transformar y almacenar datos de manera estructurada.
 
-Los datos procesados se guardan en un archivo CSV, listos para integrarse con herramientas como SQL, Excel, o Power BI.
-Finalmente, utilizamos Power BI para explorar los datos, construir visualizaciones que faciliten la interpretación de los resultados y generar poderosos insights.
+Los datos procesados se guardan en un archivo CSV quedando listos para integrarse con otras herramientas, a modo de ejemplo vamos a usar power bi para explorar los datos, construir visualizaciones que faciliten la interpretación de los resultados y generar valiosos insights.
 
 # **Codigo Python**
 
