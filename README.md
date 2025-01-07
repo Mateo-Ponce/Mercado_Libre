@@ -17,7 +17,7 @@
 </div>
 
 # **Introducción**
-Este proyecto tiene como objetivo automatizar la extracción, transformación y carga (ETL) de datos desde Mercado Libre mediante web scraping. Utilizamos Python como herramienta principal, junto con las librerías BeautifulSoup, requests y pandas, para recopilar, limpiar, transformar y almacenar datos de manera estructurada.
+Este proyecto tiene como objetivo automatizar la extracción, transformación y carga (ETL) de datos desde Mercado Libre mediante web scraping. Utilizamos Python como herramienta principal, junto con las librerías BeautifulSoup, requests y pandas, para recopilar, limpiar y transformar datos no estructurados en datos estructurados.
 
 Los datos procesados se guardan en un archivo CSV quedando listos para integrarse con otras herramientas, a modo de ejemplo vamos a usar power bi para explorar los datos, construir visualizaciones que faciliten la interpretación de los resultados y generar valiosos insights.
 
@@ -46,7 +46,7 @@ A modo de ejemplo vamos a trabajar con la categoria "componentes de pc", pero po
 ## **MAIN**
 
 inicializa una lista vacía llamada all_products, esta lista almacena cada diccionario de cada producto, al finalizar el bucle se convierte el diccionario en un DataFrame de pandas, para luego guardarlo como csv.
-en este ejemplo de Scrapearon 8 paginas y se creo un dataSet con 477 filas que representan cada producto, de esta manera de registra de forma estructurada la informacion de cada producto de forma automatica y queda
+en este ejemplo de Scrapearon 10 paginas y se creo un dataSet con 477 filas que representan cada producto, de esta manera de registra de forma estructurada la informacion de cada producto de forma automatica y queda
 lista para utilizarse en distintas herramientas, como excel, sql, power Bi, etc.
 
 <img src="Images/main.png" alt="URL" width="748" height="441">
@@ -56,5 +56,18 @@ lista para utilizarse en distintas herramientas, como excel, sql, power Bi, etc.
 
 <img src="Images/dataSet.png" alt="URL" width="1089" height="413">
 
-# **Visualización en Power bi**
+# **Power bi**
 
+## **DAX**
+utilizamos una formula DAX para crear una nueva columna que almacena la recaudación estimada por cada producto.
+
+<img src="Images/columna_recaudacion.png" alt="URL" width="1036" height="241">
+
+
+## **Dashboard**
+
+
+<img src="Images/dashboard_page-0001.jpg" alt="URL" width="1080" height="720">
+
+
+# **conclusiones**
