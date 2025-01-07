@@ -13,8 +13,20 @@
         <li>
             <a href="#Dataset">Dataset</a>
         </li>
+        <li>
+            <a href="#Power-BI">Power BI</a>
+            <ul>
+                <li><a href="#DAX">DAX</a></li>
+                <li><a href="#Dashboard">Dashboard</a></li>
+            </ul>
+        </li>
+        <li>
+            <a href="#Conclusiones">Conclusiones</a>
+        </li>
     </ul>
 </div>
+
+
 
 # **Introducción**
 Este proyecto tiene como objetivo automatizar la extracción, transformación y carga (ETL) de datos desde Mercado Libre mediante web scraping. Utilizamos Python como herramienta principal, junto con las librerías BeautifulSoup, requests y pandas, para recopilar, limpiar y transformar datos no estructurados en datos estructurados.
@@ -61,13 +73,13 @@ lista para utilizarse en distintas herramientas, como excel, sql, power Bi, etc.
 ## **DAX**
 utilizamos una formula DAX para crear una nueva columna que almacena la recaudación estimada por cada producto.
 
-<img src="Images/columna_recaudacion.png" alt="URL" width="1036" height="241">
+<img src="Images/columna_recaudacion.png" alt="URL" width="1039" height="241">
 
 
 ## **Dashboard**
 
 
-<img src="Images/dashboard_page-0001.jpg" alt="URL" width="1080" height="720">
+<img src="Images/dashboard_page-0001.jpg" alt="URL" width="1080" height="730">
 
 
 # **conclusiones**
