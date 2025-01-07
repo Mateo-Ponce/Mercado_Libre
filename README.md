@@ -79,7 +79,7 @@ utilizamos una formula DAX para crear una nueva columna que almacena la recaudac
 ## **Dashboard**
 
 
-<img src="Images/dashboard_page-0001.jpg" alt="URL" width="1080" height="730">
+<img src="Images/dashboard_page-0001.jpg" alt="URL" width="1080" height="720">
 
 
 # **conclusiones**
