@@ -56,7 +56,7 @@ si bien hardcodear los parametros de la base de datos no es una buena practica e
 
 
 # ▶️ Uso 
-El codigo esta en formato Jupiter Nootebook, deben ejecutarse las celdas de codigo en orden.
+El codigo esta en formato Jupiter Notebook, deben ejecutarse las celdas de codigo en orden.
 al ejecutar el scraper te pedira:
 
 
