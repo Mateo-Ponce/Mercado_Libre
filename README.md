@@ -1,84 +1,94 @@
-# **Mercado libre ETL web Scraping y Analisis**
+# Scraper de Componentes de PC en MercadoLibre
 
-<h1>Indice</h1>
-<div class="alert alert-block alert-info" style="margin-top: 20px">
-    <ul>
-        <li>
-            <a href="#Codigo-Python">Código Python</a>
-            <ul>
-                <li><a href="#Funciones">Funciones</a></li>
-                <li><a href="#Main">Main</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#Dataset">Dataset</a>
-        </li>
-        <li>
-            <a href="#Power-BI">Power BI</a>
-            <ul>
-                <li><a href="#DAX">DAX</a></li>
-                <li><a href="#Dashboard">Dashboard</a></li>
-            </ul>
-        </li>
-        <li>
-            <a href="#Conclusiones">Conclusiones</a>
-        </li>
-    </ul>
-</div>
+[![Versión de Python](https://img.shields.io/badge/python-3.8%2B-azul)](https://python.org)  
 
+Un scraper multihilo en Python que extrae listados de componentes de PC de MercadoLibre Argentina, limpia y categoriza los datos de producto, y los almacena en SQL Server o CSV.
 
+---
 
-# **Introducción**
-Este proyecto tiene como objetivo automatizar la extracción, transformación y carga (ETL) de datos desde Mercado Libre mediante web scraping. Utilizamos Python como herramienta principal, junto con las librerías BeautifulSoup, requests y pandas, para recopilar, limpiar y transformar datos no estructurados en datos estructurados.
+# 📋 Índice
 
-Los datos procesados se guardan en una base de datos SQL Server quedando listos para integrarse con otras herramientas, a modo de ejemplo vamos a usar Power Bi para explorar los datos, construir visualizaciones que faciliten la interpretación de los resultados y generar valiosos insights.
+1. [Características](#-características)  
+2. [Requisitos](#-requisitos)  
+3. [Instalación](#-instalación)  
+4. [Configuración](#-configuración)  
+5. [Uso](#-uso)  
+6. [Esquema de la Base de Datos](#-esquema-de-la-base-de-datos)  
+8. [Resultados y Ejemplos](#-resultados-y-ejemplos)  
+---
 
-# **Codigo Python**
+# ✨ Características
 
-A modo de ejemplo vamos a trabajar con la categoria "componentes de pc", pero podria ser cualquier categoria de productos en mercado libre simplemente cambiado el link.
+- **Scraping multihilo** con número de hilos configurables  
+- Cabeceras y delays aleatorios para simular navegación humana  
+- Manejo automático de paginación  
+- Clasificación de productos (CPU, RAM, GPU, etc.)  
+- Limpieza de URLs para eliminar parámetros de tracking  
+- Exportación a CSV e inserción masiva en SQL Server  
+- Eliminación de duplicados y estadísticas de extracción  
 
-<img src="Images/URL.png" alt="URL" width="1020" height="206">
+---
 
+# 🔧 Requisitos
 
-## Funciones:
-- #### *get_product_links*: su primer parametro es el link de la sección  a scrapear y el segundo la cantidad de paginas, asi se puede elegir que sección  recopilar datos y la cantidad de paginas. La funcion retorno una lista con los links de todos los productos producto en el rango.
+- Python 3.8 o superior  
+- Windows/macOS/Linux  
+- SQL Server (con ODBC Driver 17) si se usan inserciones en DB  
 
-  <img src="Images/get_product_link.png" alt="URL" width="757" height="411">
+---
 
-  
-- #### *extract_product_data*: recibe un link de una publicacion de un producto como parametro, utilizando request y BeautifulSoup guarda el html del la pagina, crea un diccionario scrapeando por ejemplo el titulo, el precio, el tipo de producto, etc. Esta funcion extrae y hace pequeñas transformaciones para adaptar los datos en un buen formato, finalmente devuelve un diccionario con las claves y los valores del producto.
+# 🚀 Instalación
 
-<img src="Images/extract_product_data.png" alt="URL" width="794" height="623">
+1. **Clonar el repositorio**  
+   ```bash
+   git clone https://github.com/tu-usuario/mercadolibre-pc-scraper.git
+   cd mercadolibre-pc-scraper
 
+# Configuración
+### Instalar dependencias
+*pip install -r requirements.txt*
 
-- #### *classify_product_type*: funcion complentaria que nos ayuda a llenar la columna "type" recorre los titulos de los producto buscando palabras claves como "procesador", "gabinete", "ram" si encuentra coincidencia el producto se guarda en esa categoria.
+### configuración SQL SERVER
 
-
-
-## **MAIN**
-
-inicializa una lista vacía llamada all_products, esta lista almacena cada diccionario de cada producto, al finalizar el bucle se convierte el diccionario en un DataFrame de pandas, para luego guardarlo como csv.
-en este ejemplo de Scrapearon 10 paginas y se creo un dataSet con 477 filas que representan cada producto, de esta manera de registra de forma estructurada la informacion de cada producto de forma automatica y queda
-lista para utilizarse en distintas herramientas, como excel, sql, power Bi, etc.
-
-<img src="Images/main.png" alt="URL" width="748" height="441">
+si bien hardcodear los parametros de la base de datos no es una buena practica en scripts en producción al ser este solo un proyecto deicidí hacerlo de esta manera
+<img src="Images/dataBaseConfing.png" alt="URL" width="854" height="184">
 
 
-# **dataset**
 
-<img src="Images/dataSet.png" alt="URL" width="1089" height="413">
-
-# **Power bi**
-
-## **DAX**
-utilizamos una formula DAX para crear una nueva columna que almacena la recaudación estimada por cada producto.
-
-<img src="Images/columna_recaudacion.png" alt="URL" width="1039" height="241">
+# ▶️ Uso 
+El codigo esta en formato Jupiter Nootebook, deben ejecutarse las celdas de codigo en orden.
+al ejecutar el scraper te pedira:
 
 
-## **Dashboard**
+
+-la página que quieres scrapear, busca en mercado libre un producto y copia el URL de esa busqueda
+
+-Número de páginas a scrapear (por defecto: 5)
+
+-Cantidad de hilos (por defecto: 4)
+
+-Si quieres exportar a CSV
+
+Luego de extraer, los datos se:
+
+Desduplican
+
+Exportan a productos_mercadolibre.csv (si elegiste esa opción)
+
+Insertan en la tabla ProductosMercadoLibre de SQL Server
 
 
-<img src="Images/dashboard_page-0001.jpg" alt="URL" width="1080" height="720">
+# 🗄️Esquema de la Base de Datos
+<img src="Images/esquema_tabla.png" alt="URL" width="410" height="200">
 
 
+
+# 📊*Resultados y Ejemplos*
+
+### Datos normalizados e insertado en SQL server Ejemplo
+
+<img src="Images/SQL_SERVER.png" alt="URL" width="1231" height="366">
+
+### Ejemplo de Dashboard simple en Power Bi para la visualización de los datos
+El Dashboard esta basadao en la busqueda "componentes para pc" pero podria ser cualquier otra busqueda seleccionada por el usuario
+<img src="Images/dashboard_page-0001.jpg" alt="URL" width="1308" height="745">
