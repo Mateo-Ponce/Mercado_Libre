@@ -79,7 +79,7 @@ Insertan en la tabla ProductosMercadoLibre de SQL Server
 
 
 # 🗄️Esquema de la Base de Datos
-<img src="Images/esquema_tabla.png" alt="URL" width="410" height="200">
+<img src="Images/esquema_tabla2.png" alt="URL" width="410" height="200">
 
 
 
