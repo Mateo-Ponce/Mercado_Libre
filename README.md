@@ -20,9 +20,8 @@ Un scraper multihilo en Python que extrae listados de componentes de PC de Merca
 # ✨ Características
 
 - **Scraping multihilo** con número de hilos configurables  
-- Cabeceras y delays aleatorios para simular navegación humana  
+- User-Agents aleatorios y delays entre requests 
 - Manejo automático de paginación  
-- Clasificación de productos (CPU, RAM, GPU, etc.)  
 - Limpieza de URLs para eliminar parámetros de tracking  
 - Exportación a CSV e inserción masiva en SQL Server  
 - Eliminación de duplicados y estadísticas de extracción  
@@ -43,6 +42,7 @@ Un scraper multihilo en Python que extrae listados de componentes de PC de Merca
    ```bash
    git clone https://github.com/tu-usuario/mercadolibre-pc-scraper.git
    cd mercadolibre-pc-scraper
+   https://github.com/Mateo-Ponce/Mercado_Libre.git
 
 # Configuración
 ### Instalar dependencias
