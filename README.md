@@ -2,7 +2,7 @@
 
 [![Versión de Python](https://img.shields.io/badge/python-3.8%2B-azul)](https://python.org)  
 
-Un scraper multihilo en Python que extrae listados de componentes de PC de MercadoLibre Argentina, limpia y categoriza los datos de producto, y los almacena en SQL Server o CSV.
+Scraper multihilo en Python que extrae datos de MercadoLibre Argentina, limpia y categoriza los datos de producto, y los almacena en SQL Server o CSV.
 
 ---
 
@@ -50,7 +50,8 @@ Un scraper multihilo en Python que extrae listados de componentes de PC de Merca
 
 ### configuración SQL SERVER
 
-si bien hardcodear los parametros de la base de datos no es una buena practica en scripts en producción al ser este solo un proyecto deicidí hacerlo de esta manera
+Introducir los parametros de conección a tu base de datos SQL SERVER.
+Para cambiar de motor de base de datos deberas cambiar las partes del script relacionadas con SQL SERVER.
 <img src="Images/dataBaseConfing.png" alt="URL" width="854" height="184">
 
 
@@ -87,8 +88,9 @@ Insertan en la tabla ProductosMercadoLibre de SQL Server
 
 ### Datos normalizados e insertado en SQL server Ejemplo
 
-<img src="Images/SQL_SERVER.png" alt="URL" width="1231" height="366">
+<img src="Images/SQL_SERVER.png" alt="URL" width="1031" height="366">
 
 ### Ejemplo de Dashboard simple en Power Bi para la visualización de los datos
+Los datos estructurados esta listo para integrarse a herramientas de business intelligence por ejemplo Power Bi:
 El Dashboard esta basadao en la busqueda "componentes para pc" pero podria ser cualquier otra busqueda seleccionada por el usuario
 <img src="Images/dashboard_page-0001.jpg" alt="URL" width="1308" height="745">
