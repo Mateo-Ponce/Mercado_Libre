@@ -2,7 +2,7 @@
 
 [![Versión de Python](https://img.shields.io/badge/python-3.8%2B-azul)](https://python.org)  
 
-Scraper multihilo en Python que extrae datos de MercadoLibre Argentina, limpia y categoriza los datos de producto, y los almacena en SQL Server o CSV.
+Scraper multihilo en Python que extrae datos de MercadoLibre Argentina, limpia los datos de producto, y los almacena en SQL Server o en formato CSV.
 
 ---
 
@@ -11,15 +11,16 @@ Scraper multihilo en Python que extrae datos de MercadoLibre Argentina, limpia y
 1. [Características](#-características)  
 2. [Requisitos](#-requisitos)  
 3. [Instalación](#-instalación)  
-4. [Configuración](#-configuración)  
-5. [Uso](#-uso)  
-6. [Esquema de la Base de Datos](#-esquema-de-la-base-de-datos)  
-8. [Resultados y Ejemplos](#-resultados-y-ejemplos)  
+4. [Configuración](#-Configuración)  
+5. [Uso](#-Uso)  
+6. [Esquema de la Base de Datos](#-Esquema-de-la-base-de-datos)  
+8. [Resultados y Ejemplos](#-Resultados-y-ejemplos)  
 ---
 
 # ✨ Características
 
-- **Scraping multihilo** con número de hilos configurables  
+- **Scraping multihilo** con número de hilos configurables
+- Rapida ejecucion gracias a la implementación de multihilos y concurrencia al realizar las peticiones.
 - User-Agents aleatorios y delays entre requests 
 - Manejo automático de paginación  
 - Limpieza de URLs para eliminar parámetros de tracking  
@@ -38,31 +39,36 @@ Scraper multihilo en Python que extrae datos de MercadoLibre Argentina, limpia y
 
 # 🚀 Instalación
 
-1. **Clonar el repositorio**  
+1. **Clonar con git la carpeta Notebook con el script y los requirements**  
    ```bash
-   git clone https://github.com/tu-usuario/mercadolibre-pc-scraper.git
-   cd mercadolibre-pc-scraper
-   https://github.com/Mateo-Ponce/Mercado_Libre.git
+   git init
+   git remote add origin https://github.com/Mateo-Ponce/Mercado_Libre_scraper.git
+   git config core.sparseCheckout true
+   echo "Notebook/" >> .git/info/sparse-checkout
+   git pull origin main
+
+Otra alternativa es descargar los archivos manualmente.
 
 # Configuración
-### Instalar dependencias
+### Instalar dependencias (Librerias)
 *pip install -r requirements.txt*
 
 ### configuración SQL SERVER
 
 Introducir los parametros de conección a tu base de datos SQL SERVER.
+Si la tabla ProductosMercadoLibre no existe en tu base de datos, el script la creara automaticamente si los parametros de coneccion son correctos.
 Para cambiar de motor de base de datos deberas cambiar las partes del script relacionadas con SQL SERVER.
 <img src="Images/dataBaseConfing.png" alt="URL" width="854" height="184">
 
 
 
 # ▶️ Uso 
+Ir a la pagina realiar una busqueda de un producto y copiar el url de esa busqueda.
 El codigo esta en formato Jupiter Notebook, deben ejecutarse las celdas de codigo en orden.
 al ejecutar el scraper te pedira:
 
 
-
--la página que quieres scrapear, busca en mercado libre un producto y copia el URL de esa busqueda
+-la página que quieres scrapear, copiar el URL de la busqueda de un producto
 
 -Número de páginas a scrapear (por defecto: 5)
 
